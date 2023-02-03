@@ -1,0 +1,16 @@
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.headerTitle {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+}
+
+.boldedTitle {
+  padding: 0px 5px;
+}

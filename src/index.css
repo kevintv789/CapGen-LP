@@ -1,13 +1,38 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f6f6f4;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: "Graphik-Regular";
+  src: local("GraphikRegular"),
+    url(./assets/fonts/GraphikRegular.otf) format("otf");
+}
+
+@font-face {
+  font-family: "Graphik-Semibold";
+  src: local("GraphikSemibold"),
+    url(./assets/fonts/GraphikSemibold.otf) format("otf");
+}
+
+.semibold {
+  font-family: "Graphik-Semibold";
+}
+
+.regular {
+  font-family: "Graphik-Regular";
+}
+
+.fs18 {
+  font-size: 18px;
 }
