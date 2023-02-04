@@ -4,7 +4,7 @@ import {
   Contact,
   FAQs,
   FloatingDevice,
-  Header,
+
   InitialCTA,
   SecondaryCTA,
   TutorialContainer,
@@ -12,9 +12,7 @@ import {
 
 const Home = () => {
   return (
-    <div className="pd15">
-      <Header />
-
+    <div>
       <div className="flex-horizontal-between">
         <InitialCTA />
         <FloatingDevice />
@@ -28,11 +26,11 @@ const Home = () => {
         <SecondaryCTA />
       </div>
 
-      <div className="colored-section">
+      <div className="colored-section" id="faqs">
         <FAQs />
       </div>
 
-      <div>
+      <div id="contact">
         <Contact />
       </div>
     </div>

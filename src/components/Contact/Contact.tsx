@@ -15,9 +15,11 @@ const Contact = () => {
         <p className="regular height10">Let us know how we can help.</p>
       </div>
 
-      <div className="flex space-around">
+      <div className="flex space-evenly">
         <Lottie animationData={Robot} loop className="lottie-robot" />
-        <ContactForm />
+        <div className="contact-form-container">
+          <ContactForm />
+        </div>
       </div>
     </div>
   );

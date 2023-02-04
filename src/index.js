@@ -1,13 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Home from './screens/main/Home';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Home from "./screens/main/Home";
+import PrivacyPolicy from "./screens/privacy-policy/PrivacyPolicy";
+import Terms from "./screens/terms-conditions/Terms";
+import reportWebVitals from "./reportWebVitals";
+import {
+  BrowserRouter,
+  Routes, //replaces "Switch" used till v5
+  Route,
+} from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import { Footer, Header } from "./components";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <div className="pd15">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<Terms />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

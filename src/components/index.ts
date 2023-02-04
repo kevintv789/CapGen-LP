@@ -5,6 +5,7 @@ import TutorialContainer from "./Tutorial-Container/TutorialContainer";
 import SecondaryCTA from "./SecondaryCTA/SecondaryCTA";
 import FAQs from "./FAQs/FAQs";
 import Contact from "./Contact/Contact";
+import Footer from "./Footer/Footer";
 
 export {
   Header,
@@ -14,4 +15,5 @@ export {
   SecondaryCTA,
   FAQs,
   Contact,
+  Footer,
 };

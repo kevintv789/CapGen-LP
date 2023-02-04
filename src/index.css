@@ -99,10 +99,18 @@ a:active {
   justify-content: space-evenly;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .column {
   flex-direction: column;
 }
 
 .cursor {
   cursor: pointer;
+}
+
+.content {
+  padding: 25px;
 }
