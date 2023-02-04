@@ -42,6 +42,7 @@ const DeviceFrame: React.FC<Props> = ({ contentSrc, videoSrc }) => {
               autoPlay
               muted
               loop
+              playsInline
             >
               <source src={videoSrc} type="video/mp4" />
             </video>
