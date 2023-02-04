@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useScreenSize from "../../hooks/useScreenSize";
 import Accordion from "./Accordion/Accordion";
 import "./FAQs.css";
 
@@ -54,13 +55,15 @@ const faqList: IFAQ[] = [
 ];
 
 const FAQs = () => {
+  const { isMobile } = useScreenSize();
+
   const [expanded, setExpanded] = useState<number | boolean | undefined>(
     undefined
   );
 
   return (
     <div className="centered flex column">
-      <p className="semibold fs40 height10">Frequently asked questions</p>
+      <p className={isMobile ? 'semibold fs24 height10' : "semibold fs40 height10"}>Frequently asked questions</p>
       <p className="regular height10">Ask us anything, we’re here to help!</p>
 
       <div className="faq-container">

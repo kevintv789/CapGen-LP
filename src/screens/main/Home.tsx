@@ -4,19 +4,31 @@ import {
   Contact,
   FAQs,
   FloatingDevice,
-
   InitialCTA,
   SecondaryCTA,
   TutorialContainer,
 } from "../../components";
 
+import useScreenSize from "../../hooks/useScreenSize";
+
 const Home = () => {
+  const { isTablet, isMobile, isDesktopOrLaptop } = useScreenSize();
+
   return (
     <div>
-      <div className="flex-horizontal-between">
-        <InitialCTA />
-        <FloatingDevice />
-      </div>
+      {(isDesktopOrLaptop || isTablet) && (
+        <div className="flex-horizontal-between">
+          <InitialCTA />
+          <FloatingDevice />
+        </div>
+      )}
+
+      {isMobile && (
+        <div>
+          <InitialCTA />
+          <FloatingDevice />
+        </div>
+      )}
 
       <div className="colored-section">
         <TutorialContainer />

@@ -12,6 +12,18 @@
   border-radius: 24px;
 }
 
+.floating-device-container-m {
+  margin: -20px;
+  margin-bottom: 20px;
+  height: 560px;
+  background: linear-gradient(
+    180deg,
+    rgba(165, 152, 198, 0.48) 35.42%,
+    #8c88c9 99.48%
+  );
+  border-radius: 24px;
+}
+
 .device-demo {
   position: relative;
   left: 0px;

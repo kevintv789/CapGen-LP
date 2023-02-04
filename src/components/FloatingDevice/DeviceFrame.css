@@ -3,6 +3,12 @@
   top: 0;
 }
 
+.device-frame-container-m {
+  position: absolute;
+  top: 60px;
+  padding-left: 15px;
+}
+
 .outer-box {
   border: 4px solid #ffffff;
   border-radius: 62px;
@@ -12,8 +18,6 @@
 }
 
 .inner-box {
-  width: 220px;
-  height: 477px;
   position: relative;
   background: transparent;
   border: 30px solid rgba(255, 255, 255, 0.5);
@@ -21,12 +25,32 @@
   overflow: hidden;
 }
 
+.inner-box-m {
+  position: relative;
+  background: transparent;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  border-radius: 57px;
+  overflow: hidden;
+}
+
 .frame-content {
   position: relative;
-  width: inherit;
-  height: inherit;
+  width: 220px;
+  height: auto;
+}
+
+.frame-content-m {
+  position: relative;
+  width: 200px;
+  height: auto;
 }
 
 .video {
-  width: inherit;
+  width: 220px;
+  height: auto;
+}
+
+.video-m {
+  width: 200px;
+  height: auto;
 }

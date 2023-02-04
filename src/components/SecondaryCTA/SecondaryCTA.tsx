@@ -1,16 +1,23 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
 import AppleBtn from "../../assets/AppleDownloadBtn.svg";
-
-import "./SecondaryCTA.css";
+import useScreenSize from "../../hooks/useScreenSize";
 
 const SecondaryCTA = () => {
+  const { isMobile } = useScreenSize();
+
   return (
     <div className="centered flex column">
-      <p className="semibold fs40 height10">Ready to boost your social media prowess? 💪</p>
-      <p className="regular height10">Transform your captions with AI-powered magic, download now!</p>
+      <span
+        className={isMobile ? "semibold fs24 pdt30" : "semibold fs40 pdt30"}
+      >
+        Ready to boost your social media prowess? 💪
+      </span>
+      <p className={isMobile ? "regular lh24" : "regular height10 lh24"}>
+        Transform your captions with AI-powered magic, download now!
+      </p>
 
-      <a href="#" className="initial-cta-apple-btn">
+      <a href="#" className="secondary-cta-apple-btn">
         <ReactSVG
           src={AppleBtn}
           beforeInjection={(svg) => {

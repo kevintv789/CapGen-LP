@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useScreenSize from "../../hooks/useScreenSize";
 import Carousel from "./Carousel/Carousel";
 
 import "./TutorialContainer.css";
@@ -26,14 +27,15 @@ const tutorialCopy = [
 ];
 
 const TutorialContainer = () => {
+  const { isMobile } = useScreenSize();
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   return (
     <div className="flex centered column">
-      <p className="fs40 semibold tutorial-title">
+      <span className={isMobile ? "fs24 semibold" : "fs40 semibold"}>
         Craft professional-quality captions in seconds ⚡
-      </p>
-      <p className="fs18 regular">
+      </span>
+      <p className={isMobile ? "regular lh24" : "fs18 regular lh24"}>
         Make your captions yours with various combinations of tones, lengths,
         emojis and hashtags.
       </p>
@@ -43,8 +45,20 @@ const TutorialContainer = () => {
       </div>
 
       <div className="centered column flex">
-        <p className="carousel-title semibold">{tutorialCopy[activeIndex].title}</p>
-        <p className="carousel-subtitle regular">{tutorialCopy[activeIndex].subTitle}</p>
+        <p
+          className={
+            isMobile ? "semibold carousel-title-m" : "carousel-title semibold"
+          }
+        >
+          {tutorialCopy[activeIndex].title}
+        </p>
+        <p
+          className={
+            isMobile ? "regular lh24" : "carousel-subtitle regular lh24"
+          }
+        >
+          {tutorialCopy[activeIndex].subTitle}
+        </p>
       </div>
     </div>
   );

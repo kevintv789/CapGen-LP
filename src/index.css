@@ -45,8 +45,20 @@ code {
   font-family: "Graphik-Medium";
 }
 
+.lh24 {
+  line-height: 24px;
+}
+
 .fs18 {
   font-size: 18px;
+}
+
+.fs20 {
+  font-size: 20px;
+}
+
+.fs24 {
+  font-size: 24px;
 }
 
 .fs40 {
@@ -75,10 +87,27 @@ a:active {
 
 .pd15 {
   padding: 15px 25px;
+  overflow: hidden;
+}
+
+.pdt30 {
+  padding-top: 30px;
+}
+
+.height5 {
+  height: 5px;
 }
 
 .height10 {
   height: 10px;
+}
+
+.height30 {
+  height: 30px;
+}
+
+.height60 {
+  height: 60px;
 }
 
 .flex {
@@ -103,6 +132,10 @@ a:active {
   justify-content: space-between;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 .column {
   flex-direction: column;
 }
@@ -112,5 +145,4 @@ a:active {
 }
 
 .content {
-  padding: 25px;
 }

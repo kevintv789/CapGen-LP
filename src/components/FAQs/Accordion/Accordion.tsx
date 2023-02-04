@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ChevronDown from "../../../assets/down-arrow.png";
 
 import "./Accordion.css";
+import useScreenSize from "../../../hooks/useScreenSize";
 
 type Props = {
   index: number;
@@ -23,12 +24,13 @@ const Accordion: React.FC<Props> = ({
   isExpanded,
   setExpanded,
 }) => {
+  const { isMobile } = useScreenSize();
   const isOpen = index === isExpanded;
 
   return (
     <div>
       <motion.div
-        className="medium faq-header cursor"
+        className={isMobile ? 'medium faq-header cursor': "medium faq-header fs20 cursor"}
         initial={undefined}
         onClick={() => setExpanded(isOpen ? false : index)}
       >

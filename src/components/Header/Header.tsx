@@ -1,10 +1,12 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import appIcon from "../../assets/appIcon_1024.png";
+import useScreenSize from "../../hooks/useScreenSize";
 
 import "./Header.css";
 
 const Header = () => {
+  const { isMobile } = useScreenSize();
   const location = useLocation();
 
   const scrollTo = (id: string) => {
@@ -17,16 +19,24 @@ const Header = () => {
   };
 
   return (
-    <div className="headerContainer">
+    <div className={isMobile ? "text-align-center" : "headerContainer"}>
       <Link to="/">
-        <span className="headerTitle">
+        <span className={isMobile ? "" : "headerTitle"}>
           <img src={appIcon} alt="CapGen App Icon" className="icon" />
-          <p className="semibold boldedTitle fs18">CapGen: AI-Powered</p>
-          <p className="regular fs18">Caption Generator</p>
+          <p
+            className={
+              isMobile ? "semibold height5" : "semibold boldedTitle fs18"
+            }
+          >
+            CapGen: AI-Powered
+          </p>
+          <p className={isMobile ? "regular" : "regular fs18"}>
+            Caption Generator
+          </p>
         </span>
       </Link>
 
-      {location.pathname === "/" && (
+      {location.pathname === "/" && !isMobile && (
         <span className="headerTitle middlePurple">
           <a
             href="#"
