@@ -38,26 +38,24 @@ const Header = () => {
 
       {location.pathname === "/" && !isMobile && (
         <span className="headerTitle middlePurple">
-          <a
-            href="#"
+          <button
             onClick={(e) => {
               e.preventDefault();
               scrollTo("faqs");
             }}
-            className="navLinks semibold fs18"
+            className="navLinks semibold fs18 header-btn"
           >
             FAQ
-          </a>
-          <a
-            href="#"
+          </button>
+          <button
             onClick={(e) => {
               e.preventDefault();
               scrollTo("contact");
             }}
-            className="navLinks semibold fs18"
+            className="navLinks semibold fs18 header-btn"
           >
             Contact
-          </a>
+          </button>
         </span>
       )}
     </div>

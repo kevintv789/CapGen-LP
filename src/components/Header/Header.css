@@ -22,3 +22,10 @@
 .navLinks {
   padding: 10px 15px;
 }
+
+.header-btn {
+  border: 0;
+  background: transparent;
+  color: #8c88c9;
+  cursor: pointer;
+}

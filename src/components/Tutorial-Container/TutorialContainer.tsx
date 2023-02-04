@@ -41,7 +41,10 @@ const TutorialContainer = () => {
       </p>
 
       <div className="carousel-container">
-        <Carousel onSliderChange={(index) => setActiveIndex(index)} />
+        <Carousel
+          onSliderChange={(index) => setActiveIndex(index)}
+          altText={`${tutorialCopy[activeIndex].title} - ${tutorialCopy[activeIndex].subTitle}`}
+        />
       </div>
 
       <div className="centered column flex">

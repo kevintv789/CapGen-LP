@@ -1,6 +1,4 @@
-export default
-
-`<style>
+const termsContent = `<style>
 [data-custom-class='body'], [data-custom-class='body'] * {
         background: transparent !important;
       }
@@ -150,4 +148,6 @@ The app reserves the right to suspend or terminate a user's access to the app at
     }
   </style>
     </div>
-    `
+    `;
+
+export default termsContent;

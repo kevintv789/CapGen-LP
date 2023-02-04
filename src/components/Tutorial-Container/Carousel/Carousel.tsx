@@ -13,9 +13,10 @@ import "./Carousel.css";
 
 type Props = {
   onSliderChange: (index: number) => void;
+  altText: string;
 };
 
-const Carousel: React.FC<Props> = ({ onSliderChange }) => {
+const Carousel: React.FC<Props> = ({ onSliderChange, altText }) => {
   return (
     <div>
       <Swiper
@@ -27,16 +28,16 @@ const Carousel: React.FC<Props> = ({ onSliderChange }) => {
         onSlideChange={(e) => onSliderChange(e.activeIndex)}
       >
         <SwiperSlide>
-          <img src={Step1} className="slider-image" />
+          <img src={Step1} className="slider-image" alt={altText} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Step2} className="slider-image" />
+          <img src={Step2} className="slider-image" alt={altText} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Step3} className="slider-image" />
+          <img src={Step3} className="slider-image" alt={altText} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Step4} className="slider-image" />
+          <img src={Step4} className="slider-image" alt={altText} />
         </SwiperSlide>
       </Swiper>
     </div>

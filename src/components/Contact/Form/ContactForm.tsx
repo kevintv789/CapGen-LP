@@ -60,7 +60,7 @@ const ContactForm = () => {
       setMessageError(message?.trim() === "");
       setEmailError(() => {
         let re =
-          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         if (email != null && re.test(email)) {
           return false;
@@ -106,7 +106,7 @@ const ContactForm = () => {
         "fbrYJAVzV3GnY3pDP"
       );
 
-      if (response.status == 200) {
+      if (response.status === 200) {
         setName("");
         setEmail("");
         setMessage("");
@@ -159,7 +159,7 @@ const ContactForm = () => {
 
       <CustomButton
         variant="contained"
-        endIcon={<img src={SendIcon} width={20} height={20} />}
+        endIcon={<img src={SendIcon} width={20} height={20} alt="Send message icon"/>}
         onClick={onSubmit}
         disabled={isLoading}
       >

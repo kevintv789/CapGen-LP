@@ -1,5 +1,4 @@
 import React from "react";
-import LaunchView from ".././assets/launchView.gif";
 import { motion } from "framer-motion";
 
 import "./FloatingDevice.css";
@@ -19,13 +18,13 @@ const DeviceFrame: React.FC<Props> = ({ contentSrc, videoSrc }) => {
       className={
         isMobile ? "device-frame-container-m" : "device-frame-container"
       }
-      // animate={{ top: isMobile ? [60, 50, 60] : [0, 10, 0] }}
-      // transition={{
-      //   duration: 2,
-      //   ease: "easeInOut",
-      //   repeat: Infinity,
-      //   repeatDelay: 0,
-      // }}
+      animate={{ top: isMobile ? [60, 50, 60] : [0, 10, 0] }}
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatDelay: 0,
+      }}
     >
       <div className="outer-box">
         <div className={isMobile ? "inner-box-m" : "inner-box"}>
