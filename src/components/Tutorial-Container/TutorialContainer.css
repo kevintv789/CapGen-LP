@@ -1,0 +1,18 @@
+.tutorial-title {
+  height: 5px;
+}
+
+.carousel-container {
+  padding: 15px 0px 30px 0px;
+}
+
+.carousel-title {
+  margin-top: 50px;
+  font-size: 24px;
+  height: 10px;
+}
+
+.carousel-subtitle {
+  width: 300px;
+  line-height: 24px;
+}

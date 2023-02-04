@@ -1,0 +1,11 @@
+.flex-horizontal-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colored-section {
+  background: rgba(191, 187, 225, 0.15);
+  margin: 25px -25px 0 -25px;
+  padding: 25px;
+  margin-top: 25px;
+}

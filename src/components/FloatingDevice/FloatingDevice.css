@@ -1,0 +1,25 @@
+.floating-device-container {
+  min-width: 29%;
+  max-width: -webkit-fill-available;
+  height: 500px;
+  padding: 0px 8% 2% 4%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(165, 152, 198, 0.48) 35.42%,
+    #8c88c9 99.48%
+  );
+  border-radius: 24px;
+}
+
+.device-demo {
+  position: relative;
+  left: 0px;
+  top: -100px;
+}
+
+.device-static {
+  position: relative;
+  left: 120px;
+  top: -150px;
+}

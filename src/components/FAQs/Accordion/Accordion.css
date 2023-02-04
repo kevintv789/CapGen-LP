@@ -1,0 +1,17 @@
+.faq-header {
+  font-size: 20px;
+  padding-top: 10px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.horizontal-line {
+  height: 10px;
+  border-bottom: 1px solid #aeafc3;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+}

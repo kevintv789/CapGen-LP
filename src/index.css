@@ -13,6 +13,8 @@ code {
     monospace;
 }
 
+/* CUSTOM STYLES BELOW */
+
 @font-face {
   font-family: "Graphik-Regular";
   src: local("GraphikRegular"),
@@ -25,6 +27,12 @@ code {
     url(./assets/fonts/GraphikSemibold.otf) format("otf");
 }
 
+@font-face {
+  font-family: "Graphik-Medium";
+  src: local("GraphikMedium"),
+    url(./assets/fonts/GraphikMedium.otf) format("otf");
+}
+
 .semibold {
   font-family: "Graphik-Semibold";
 }
@@ -33,6 +41,68 @@ code {
   font-family: "Graphik-Regular";
 }
 
+.medium {
+  font-family: "Graphik-Medium";
+}
+
 .fs18 {
   font-size: 18px;
+}
+
+.fs40 {
+  font-size: 40px;
+}
+
+.fs60 {
+  font-size: 60px;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.middlePurple {
+  color: #8c88c9;
+}
+
+.darkSalmon {
+  color: #e59584;
+}
+
+.pd15 {
+  padding: 15px 25px;
+}
+
+.height10 {
+  height: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.centered {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.cursor {
+  cursor: pointer;
 }
