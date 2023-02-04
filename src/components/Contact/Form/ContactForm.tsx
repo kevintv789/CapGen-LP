@@ -1,8 +1,8 @@
 import { Button, TextField } from "@mui/material";
-import { createTheme, styled } from "@mui/material/styles";
-import { MuiStyledOptions } from "@mui/system";
-import React, { useState } from "react";
+import { styled } from "@mui/material/styles";
+import React, { useEffect, useState } from "react";
 import SendIcon from "../../../assets/send-icon.png";
+import emailjs from "@emailjs/browser";
 
 import "./ContactForm.css";
 
@@ -44,9 +44,77 @@ const CustomButton = styled(Button)(
 );
 
 const ContactForm = () => {
-  const [name, setName] = useState<string | undefined>();
-  const [email, setEmail] = useState<string | undefined>();
-  const [message, setMessage] = useState<string | undefined>();
+  const [name, setName] = useState<string | undefined>("");
+  const [email, setEmail] = useState<string | undefined>("");
+  const [message, setMessage] = useState<string | undefined>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [isNameError, setNameError] = useState<boolean | undefined>();
+  const [isEmailError, setEmailError] = useState<boolean | undefined>();
+  const [isMessageError, setMessageError] = useState<boolean | undefined>();
+
+  useEffect(() => {
+    // Only send if there are no errors
+    if (isSubmitted) {
+      setNameError(name?.trim() === "");
+      setMessageError(message?.trim() === "");
+      setEmailError(() => {
+        let re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if (email != null && re.test(email)) {
+          return false;
+        }
+
+        return true;
+      });
+    }
+  }, [name, message, email, isSubmitted]);
+
+  const onSubmit = async () => {
+    // reset entered texts
+    setIsSubmitted(true);
+    setIsLoading(true);
+
+    if (
+      name !== "" &&
+      !isNameError &&
+      email !== "" &&
+      !isEmailError &&
+      message !== "" &&
+      !isMessageError
+    ) {
+      await sendEmail();
+      setIsSubmitted(false);
+    }
+
+    setIsLoading(false);
+  };
+
+  const sendEmail = async () => {
+    var templateParams = {
+      from_name: name,
+      message,
+      from_email: email,
+    };
+
+    try {
+      const response = await emailjs.send(
+        "service_d47igkv",
+        "template_tz8th1i",
+        templateParams,
+        "fbrYJAVzV3GnY3pDP"
+      );
+
+      if (response.status == 200) {
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (e) {
+      console.log("Failed to send email!", e);
+    }
+  };
 
   return (
     <div>
@@ -59,6 +127,7 @@ const ContactForm = () => {
         margin="normal"
         onChange={({ target }) => setName(target.value)}
         value={name}
+        error={isNameError}
       />
 
       <CustomTextField
@@ -70,6 +139,7 @@ const ContactForm = () => {
         margin="normal"
         onChange={({ target }) => setEmail(target.value)}
         value={email}
+        error={isEmailError}
       />
 
       <CustomTextField
@@ -84,12 +154,14 @@ const ContactForm = () => {
         multiline
         onChange={({ target }) => setMessage(target.value)}
         value={message}
+        error={isMessageError}
       />
 
       <CustomButton
         variant="contained"
         endIcon={<img src={SendIcon} width={20} height={20} />}
-        onClick={() => console.log("submit")}
+        onClick={onSubmit}
+        disabled={isLoading}
       >
         Send message
       </CustomButton>

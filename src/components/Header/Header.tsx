@@ -1,9 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import appIcon from "../../assets/appIcon_1024.png";
+
 import "./Header.css";
 
 const Header = () => {
+  const location = useLocation();
+
   const scrollTo = (id: string) => {
     var element = document.getElementById(id);
     element?.scrollIntoView({
@@ -23,28 +26,30 @@ const Header = () => {
         </span>
       </Link>
 
-      <span className="headerTitle middlePurple">
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollTo("faqs");
-          }}
-          className="navLinks semibold fs18"
-        >
-          FAQ
-        </a>
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollTo("contact");
-          }}
-          className="navLinks semibold fs18"
-        >
-          Contact
-        </a>
-      </span>
+      {location.pathname === "/" && (
+        <span className="headerTitle middlePurple">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo("faqs");
+            }}
+            className="navLinks semibold fs18"
+          >
+            FAQ
+          </a>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo("contact");
+            }}
+            className="navLinks semibold fs18"
+          >
+            Contact
+          </a>
+        </span>
+      )}
     </div>
   );
 };

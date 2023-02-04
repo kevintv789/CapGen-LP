@@ -35,7 +35,7 @@ const TutorialContainer = () => {
       </p>
       <p className="fs18 regular">
         Make your captions yours with various combinations of tones, lengths,
-        emojis and hashtags
+        emojis and hashtags.
       </p>
 
       <div className="carousel-container">
