@@ -17,7 +17,7 @@ const SecondaryCTA = () => {
         Transform your captions with AI-powered magic, download now!
       </p>
 
-      <a href="https://www.apple.com/app-store/" className="secondary-cta-apple-btn">
+      <a href="https://apps.apple.com/us/app/capgen-ai-powered/id1663555969" className="secondary-cta-apple-btn">
         <ReactSVG
           src={AppleBtn}
           beforeInjection={(svg) => {

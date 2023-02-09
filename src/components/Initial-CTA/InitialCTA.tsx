@@ -28,7 +28,7 @@ const InitialCTA = () => {
         generator that saves you time and amps up your content!
       </div>
 
-      <a href="https://www.apple.com/app-store/" className="initial-cta-apple-btn">
+      <a href="https://apps.apple.com/us/app/capgen-ai-powered/id1663555969" className="initial-cta-apple-btn">
         <ReactSVG
           src={AppleBtn}
           beforeInjection={(svg) => {
