@@ -9,7 +9,13 @@ const InitialCTA = () => {
 
   return (
     <div
-      className={isMobile ? "initial-cta-container-m" : isTablet ? 'initial-cta-container-t' : "initial-cta-container"}
+      className={
+        isMobile
+          ? "initial-cta-container-m"
+          : isTablet
+          ? "initial-cta-container-t"
+          : "initial-cta-container"
+      }
     >
       <div className={isMobile ? "fs40" : "fs60"}>
         <div className="semibold">
@@ -28,7 +34,10 @@ const InitialCTA = () => {
         generator that saves you time and amps up your content!
       </div>
 
-      <a href="https://apps.apple.com/us/app/capgen-ai-powered/id1663555969" className="initial-cta-apple-btn">
+      <a
+        href="itms-apps://itunes.apple.com/app/apple-store/id1663555969?mt=8"
+        className="initial-cta-apple-btn"
+      >
         <ReactSVG
           src={AppleBtn}
           beforeInjection={(svg) => {
