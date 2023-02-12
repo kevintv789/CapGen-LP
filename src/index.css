@@ -13,6 +13,10 @@ code {
     monospace;
 }
 
+html, body, #root {
+  height: 100%;
+}
+
 /* CUSTOM STYLES BELOW */
 
 @font-face {
@@ -153,5 +157,9 @@ a:active {
   cursor: pointer;
 }
 
-.content {
+.footer-container {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
